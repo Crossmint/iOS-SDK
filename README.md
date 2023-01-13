@@ -36,7 +36,8 @@ nftsViewController.nfts = [
             image: "https://twitter.com/crossmint/photo",
             attributes: []
         ),
-        locator: "solana:123")
+        locator: "solana:123"
+    )
 ]
 ```
 
