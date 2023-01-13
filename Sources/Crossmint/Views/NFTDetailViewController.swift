@@ -7,15 +7,15 @@
 
 import UIKit
 
-class NFTDetailViewController: UIViewController {
-    let nft: NFT
+public class NFTDetailViewController: UIViewController {
+    public let nft: NFT
     
     @IBOutlet private(set) weak var nftDescription: UITextView!
     @IBOutlet private(set) weak var subtitle: UILabel!
     @IBOutlet private(set) weak var titleLabel: UILabel!
     @IBOutlet private(set) weak var imageView: UIImageView!
 
-    init(nft: NFT)
+    public init(nft: NFT)
     {
         self.nft = nft
         super.init(nibName: nil, bundle: Bundle.module)
@@ -25,7 +25,7 @@ class NFTDetailViewController: UIViewController {
 }
 
 // MARK: - View Life Cycle
-extension NFTDetailViewController {
+public extension NFTDetailViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()

@@ -8,14 +8,15 @@
 import UIKit
 
 public class NFTsCollectionViewController: UIViewController {
-    @IBOutlet private weak var collectionView: UICollectionView!
-    
     public var nfts: [NFT] = [] {
         didSet { collectionView?.reloadData() }
     }
+    public var onNFTSelected: ((NFT) -> Void)?
+
+    @IBOutlet private weak var collectionView: UICollectionView!
     
     public init() { super.init(nibName: "NFTsCollectionViewController", bundle: Bundle.module) }
-    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    required init?(coder: NSCoder) { super.init(nibName: "NFTsCollectionViewController", bundle: Bundle.module) }
 }
 
 // MARK: - View Life Cycle
@@ -35,8 +36,7 @@ extension NFTsCollectionViewController: UICollectionViewDelegate, UICollectionVi
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
         let nft = nfts[indexPath.row]
-        let detailViewController = NFTDetailViewController(nft: nft)
-        self.present(detailViewController, animated: true)
+        onNFTSelected?(nft)
     }
     
     public func collectionView(
