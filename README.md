@@ -23,7 +23,7 @@ High-level descriptions are provided below, clone this repository locally and ch
 Included in the demo is a real-world code example to fetch NFTs from an API and display their contents in-app.
 
 Use `NFTsCollectionViewController` to display a list of NFTs:
-```
+```swift
 let nftsViewController = NFTsCollectionViewController()
 nftsViewController.nfts = [
     NFT(
@@ -41,7 +41,7 @@ nftsViewController.nfts = [
 ```
 
 Set the `onNFTSelected` callback to respond to an NFT being tapped:
-```
+```swift
 nftsViewController.onNFTSelected = { nft in
     let nftDetailsViewController = NFTDetailViewController(nft: nft)
     self.present(nftDetailsViewController, animated: true)
