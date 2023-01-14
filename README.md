@@ -26,18 +26,31 @@ Use `NFTsCollectionViewController` to display a list of NFTs:
 ```swift
 let nftsViewController = NFTsCollectionViewController()
 nftsViewController.nfts = [
-    NFT(
-        chain: "solana",
-        mintHash: "123",
-        metadata: NFT.Metadata(
-            name: "NFT 1",
-            symbol: "NFT",
-            description: "An NFT",
-            image: "https://twitter.com/crossmint/photo",
-            attributes: []
-        ),
-        locator: "solana:123"
+  .solana(
+    SolanaNFT(
+      mintHash: "123",
+      metadata: SolanaNFT.Metadata(
+        name: "The NFT",
+        symbol: "NF",
+        image: "https://twitter.com/crossmint/photo",
+        attributes: [.init(traitType: "color", value: "blue")]
+      )
     )
+  ),
+  .evm(
+    EVMNFT(
+      chain: .polygon,
+      contractAddress: "0x01",
+      tokenId: "1",
+      metadata: EVMNFT.Metadata(
+        image: "https://twitter.com/crossmint/photo",
+        collection: NFT.Collection(name: "Great collectiojn"),
+        name: "The other NFT",
+        description: "A fantastic NFT",
+        attributes: [.init(traitType: "color", value: "green")]
+      )
+    )
+  )
 ]
 ```
 
