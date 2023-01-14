@@ -10,7 +10,7 @@ import Foundation
 public protocol NFTType: Decodable {
     associatedtype MetadataType: NFTMetadataType
 
-    var chain: String { get }
+    var chain: Blockchain { get }
     var metadata: MetadataType { get }
 }
 
@@ -20,7 +20,7 @@ public enum NFT: NFTType {
     case solana(SolanaNFT)
     case evm(EVMNFT)
     
-    public var chain: String {
+    public var chain: Blockchain {
         switch (self) {
             case .solana(let nft): return nft.chain
             case .evm(let nft): return nft.chain
