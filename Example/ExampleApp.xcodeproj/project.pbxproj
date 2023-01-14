@@ -80,8 +80,7 @@
 				E5A955E5296FD3BF00E34A9C /* ViewController.swift */,
 				E5A955E6296FD3BF00E34A9C /* ViewController.xib */,
 			);
-			name = Views;
-			path = "../../../iOS-SDK-old/Example/Views";
+			path = Views;
 			sourceTree = "<group>";
 		};
 		E5A955EB296FD3BF00E34A9C /* Services */ = {
@@ -89,8 +88,7 @@
 			children = (
 				E5A955EC296FD3BF00E34A9C /* NFTService.swift */,
 			);
-			name = Services;
-			path = "../../../iOS-SDK-old/Example/Services";
+			path = Services;
 			sourceTree = "<group>";
 		};
 		E5A955F5296FD3D900E34A9C /* Packages */ = {
