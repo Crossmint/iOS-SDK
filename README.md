@@ -1,4 +1,4 @@
-# Crossmint
+# Crossmint iOS SDK
 
 A library of components for displaying a list of NFTs as well as the details of an NFT.
 
