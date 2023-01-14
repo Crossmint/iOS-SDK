@@ -28,6 +28,7 @@ public extension SolanaNFT {
     public let image: String
     public let collection: NFT.Collection?
     public let attributes: [NFT.Metadata.Attribute]
+    public let properties: NFT.Metadata.Properties?
     public let animationUrl: String?
     public let externalUrl: String?
     public let sellerFeeBasisPoints: Int?
@@ -39,6 +40,7 @@ public extension SolanaNFT {
       image: String,
       collection: NFT.Collection? = nil,
       attributes: [NFT.Metadata.Attribute],
+      properties: NFT.Metadata.Properties? = nil,
       animationUrl: String? = nil,
       externalUrl: String? = nil,
       sellerFeeBasisPoints: Int? = nil
@@ -49,6 +51,7 @@ public extension SolanaNFT {
       self.image = image
       self.collection = collection
       self.attributes = attributes
+      self.properties = properties
       self.animationUrl = animationUrl
       self.externalUrl = externalUrl
       self.sellerFeeBasisPoints = sellerFeeBasisPoints
@@ -64,6 +67,7 @@ extension SolanaNFT.Metadata {
     case image
     case collection
     case attributes
+    case properties
     case animationUrl = "animation_url"
     case externalUrl = "external_url"
     case sellerFeeBasisPoints = "seller_fee_basis_points"
