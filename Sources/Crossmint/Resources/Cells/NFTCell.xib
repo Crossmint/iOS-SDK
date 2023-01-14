@@ -29,7 +29,6 @@
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Ps-7C-RDj">
                         <rect key="frame" x="0.0" y="0.0" width="148" height="140"/>
-                        <color key="backgroundColor" systemColor="systemBrownColor"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDi-a9-t01">
                         <rect key="frame" x="0.0" y="185" width="148" height="30"/>

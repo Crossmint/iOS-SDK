@@ -38,16 +38,14 @@ public extension NFTDetailViewController {
 private extension NFTDetailViewController {
     func bindData()
     {
-        titleLabel.text = nft.metadata?.name
-        subtitle.text = nft.metadata?.symbol
-        nftDescription.text = nft.metadata?.description
+        titleLabel.text = nft.metadata.name
+//        subtitle.text = nft.metadata.symbol
+        nftDescription.text = nft.metadata.description
         
-        if let imageURL = nft.metadata?.image {
-            ImageService().downloadImage(from: imageURL, image: { [weak self] data in
-                DispatchQueue.main.async {
-                    self?.imageView.image = UIImage(data: data)
-                }
-            })
+        ImageService().downloadImage(from: nft.metadata.image) { [weak self] data in
+            DispatchQueue.main.async {
+                self?.imageView.image = UIImage(data: data)
+            }
         }
     }
 }

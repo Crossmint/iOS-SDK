@@ -14,15 +14,13 @@ class NFTCell: UICollectionViewCell {
     @IBOutlet weak var name: UILabel!
     
     func configureCell(nft: NFT) {
-        self.name.text = nft.metadata?.name
-        self.quantity.text = "\(nft.metadata?.sellerFeeBasisPoints ?? 0)"
+        self.name.text = nft.metadata.name
+        self.quantity.text = nft.metadata.description
         
-        if let imageURL = nft.metadata?.image {
-            ImageService().downloadImage(from: imageURL, image: { [weak self] data in
-                DispatchQueue.main.async {
-                    self?.imageView.image = UIImage(data: data)
-                }
-            })
+        ImageService().downloadImage(from: nft.metadata.image) { [weak self] data in
+            DispatchQueue.main.async {
+                self?.imageView.image = UIImage(data: data)
+            }
         }
     }
 }
